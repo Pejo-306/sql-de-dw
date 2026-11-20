@@ -58,3 +58,27 @@ SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: Loadin
 INSERT INTO skills_job_dim (skill_id, job_id)
 SELECT skill_id, job_id
 FROM read_csv('https://storage.googleapis.com/sql_de/skills_job_dim.csv', AUTO_DETECT=TRUE);
+
+-- Data Validation
+
+SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: Record counts') AS info;
+
+SELECT 'company_dim' AS table_name, COUNT(*) AS record_count FROM company_dim
+UNION ALL
+SELECT 'skills_dim', COUNT(*) FROM skills_dim
+UNION ALL
+SELECT 'job_postings_fact', COUNT(*) FROM job_postings_fact
+UNION ALL
+SELECT 'skills_job_dim', COUNT(*) FROM skills_job_dim;
+
+SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: company_dim sample') AS info;
+SELECT * FROM company_dim LIMIT 5;
+
+SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: skills_dim sample') AS info;
+SELECT * FROM skills_dim LIMIT 5;
+
+SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: job_postings_fact sample') AS info;
+SELECT * FROM job_postings_fact LIMIT 5;
+
+SELECT CONCAT(strftime(CURRENT_TIMESTAMP, '%Y-%m-%d %H:%M:%S'), ' [INFO]: skills_job_dim sample') AS info;
+SELECT * FROM skills_job_dim LIMIT 5;

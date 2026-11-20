@@ -1,3 +1,5 @@
+-- duckdb dw.duckdb -c ".read sql/00_build_dw.sql
+
 -- Step 1: Create star schema tables
 .read sql/01_create_tables_dw.sql
 
