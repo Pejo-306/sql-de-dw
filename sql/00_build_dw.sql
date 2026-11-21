@@ -17,3 +17,7 @@
 
 -- Step 6: Update priority mart
 .read sql/06_update_priority_mart.sql
+
+-- Step 7: Create copmany mart
+-- WARNING: this is extremely CPU intensive. Make sure your laptop can handle the heat.
+.read sql/07_create_company_mart.sql
