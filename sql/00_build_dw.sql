@@ -20,4 +20,5 @@
 
 -- Step 7: Create copmany mart
 -- WARNING: this is extremely CPU intensive. Make sure your laptop can handle the heat.
-.read sql/07_create_company_mart.sql
+-- If you're not faint of heart, uncomment the line below.
+-- .read sql/07_create_company_mart.sql
